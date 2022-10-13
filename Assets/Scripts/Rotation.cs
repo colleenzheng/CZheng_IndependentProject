@@ -14,10 +14,6 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void RotateBoard()
     {
-        gameObj.transform.arena = new Vector3(
-            gameObj.transform.arena.x,
-            gameObj.transform.arena.y + 90,
-            gameObj.transform.arena.z
-        );
+        arena.transform.position = new Vector3(0, 90, 0); 
     }
 }
