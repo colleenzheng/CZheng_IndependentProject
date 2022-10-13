@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 
-public class RandomizerGenerator : MonoBehaviour
+public class RandomComboGenerator : MonoBehaviour
 {
     public GameObject RedTriangle;
     public GameObject RedCircle;
@@ -21,22 +21,35 @@ public class RandomizerGenerator : MonoBehaviour
     public string[] colorArr = new string[]{ "Red", "Blue", "Yellow" };
     public string[] shapeArr = new string[]{ "Triangle", "Circle", "Square" };
 
+
     //string[] colorArr = new string[3] { "Red", "Blue" , "Yellow" };
     //string[] shapeArr = new string[3] { "Triangle", "Circle" , "Square" };
 
-    public ArrayList yellow = new ArrayList();
-    public ArrayList blue = new ArrayList();
-    public ArrayList red = new ArrayList();
-    public ArrayList triangle = new ArrayList();
-    public ArrayList circle = new ArrayList();
-    public ArrayList square = new ArrayList(); 
 
-   // GameObject[] yellow = new GameObject[3] { YellowTriangle, YellowCircle, YellowSquare };
-   // GameObject[] blue = new GameObject[3] { BlueTriangle, BlueCircle, BlueSquare };
-   // GameObject[] red = new GameObject[3] { RedTriangle, RedCircle, RedSquare };
-   // GameObject[] triangle = new GameObject[3] { RedTriangle, BlueTriangle, YellowTriangle };
-   // GameObject[] circle = new GameObject[3] { RedCircle, BlueCircle, YellowCircle };
-   // GameObject[] square = new GameObject[3] { RedSquare, BlueSquare, YellowSquare };
+    List<GameObject> yellow;       
+    yellow.Add(new GameObject); 
+    yellow.Add(YellowCircle);
+    yellow.Add(YellowSquare); 
+    List<GameObject> blue = new List<GameObject>();
+    blue.Add(BlueTriangle);
+    blue.Add(BlueCircle);
+    blue.Add(BlueSquare);
+    List<GameObject> red = new List<GameObject>();
+    red.Add(RedTriangle); 
+    red.Add(RedCircle);
+    red.Add(RedSquare);
+    List<GameObject> triangle = new List<GameObject>();
+    triangle.Add(RedTriangle);
+    triangle.Add(BlueTriangle);
+    triangle.Add(YellowTriangle);
+    List<GameObject> circle = new List<GameObject>();
+    circle.Add(RedCircle);
+    circle.Add(BlueCircle); 
+    circle.Add(YellowCircle); 
+    List<GameObject> square = new List<GameObject>();
+    square.Add(RedSquare);
+    square.Add(BlueSquare); 
+    square.Add(YellowSquare);
 
 
     void Start()
