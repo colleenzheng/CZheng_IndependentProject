@@ -18,30 +18,41 @@ public class RandomizerGenerator : MonoBehaviour
     public GameObject YellowCircle;
     public GameObject YellowSquare;
 
-    string colorOne = "Red";
-    string colorTwo = "Blue";
-    string colorThree = "Yellow";
-    string shapeOne = "Triangle";
-    string shapeTwo = "Circle";
-    string shapeThree = "Square";
+    public string[] colorArr = new string[]{ "Red", "Blue", "Yellow" };
+    public string[] shapeArr = new string[]{ "Triangle", "Circle", "Square" };
 
-    string[] colorArr = new string[3] { colorOne, colorTwo, colorThree };
-    string[] shapeArr = new string[3] { shapeOne, shapeTwo, shapeThree };
+    //string[] colorArr = new string[3] { "Red", "Blue" , "Yellow" };
+    //string[] shapeArr = new string[3] { "Triangle", "Circle" , "Square" };
 
-    GameObject[] yellow = new GameObject[3] { YellowTriangle, YellowCircle, YellowSquare };
-    GameObject[] blue = new GameObject[3] { BlueTriangle, BlueCircle, BlueSquare };
-    GameObject[] red = new GameObject[3] { RedTriangle, RedCircle, RedSquare };
-    GameObject[] triangle = new GameObject[3] { RedTriangle, BlueTriangle, YellowTriangle };
-    GameObject[] circle = new GameObject[3] { RedCircle, BlueCircle, YellowCircle };
-    GameObject[] square = new GameObject[3] { RedSquare, BlueSquare, YellowSquare };
+    public ArrayList yellow = new ArrayList();
+    public ArrayList blue = new ArrayList();
+    public ArrayList red = new ArrayList();
+    public ArrayList triangle = new ArrayList();
+    public ArrayList circle = new ArrayList();
+    public ArrayList square = new ArrayList(); 
 
-    // Start is called before the first frame update
+   // GameObject[] yellow = new GameObject[3] { YellowTriangle, YellowCircle, YellowSquare };
+   // GameObject[] blue = new GameObject[3] { BlueTriangle, BlueCircle, BlueSquare };
+   // GameObject[] red = new GameObject[3] { RedTriangle, RedCircle, RedSquare };
+   // GameObject[] triangle = new GameObject[3] { RedTriangle, BlueTriangle, YellowTriangle };
+   // GameObject[] circle = new GameObject[3] { RedCircle, BlueCircle, YellowCircle };
+   // GameObject[] square = new GameObject[3] { RedSquare, BlueSquare, YellowSquare };
 
-    // Update is called once per frame
+
+    void Start()
+    {
+        RandomCombo();
+    }
+
     void Update()
     {
-        //generates random color and shape 
-        string randCombo = colorArr[rand() % 3 + 1] << shapeArr[rand() % 3 + 1];
+
+    }
+
+    //generates random color and shape 
+    void RandomCombo() { 
+    
+        string randCombo = colorArr[Random.Range(1,3)] + shapeArr[Random.Range(1,3)];
 
         //prints random color and shape for player
         Debug.Log(randCombo);
@@ -49,93 +60,94 @@ public class RandomizerGenerator : MonoBehaviour
         if (randCombo == "RedTriangle")
         {
             //shows a random color on the left 
-            GameObject randRed = red[rand() % 3 + 1];
-            Instantiate(randRed, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randRed = red[Random.Range(1, 3)];
+            Instantiate(randRed, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randTriangle = triangle[rand() % 3 + 1];
-            Instantiate(randTriangle, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randTriangle = triangle[Random.Range(1, 3)];
+            Instantiate(randTriangle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "RedCircle")
         {
             //shows a random color on the left 
-            GameObject randRed = red[rand() % 3 + 1];
-            Instantiate(randRed, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randRed = red[Random.Range(1, 3)];
+            Instantiate(randRed, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randCircle = triangle[rand() % 3 + 1];
-            Instantiate(randCircle, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randCircle = triangle[Random.Range(1, 3)];
+            Instantiate(randCircle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "RedSquare")
         {
             //shows a random color on the left 
-            GameObject randRed = red[rand() % 3 + 1];
-            Instantiate(randRed, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randRed = red[Random.Range(1, 3)];
+            Instantiate(randRed, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randSquare = triangle[rand() % 3 + 1];
-            Instantiate(randSquare, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randSquare = triangle[Random.Range(1, 3)];
+            Instantiate(randSquare, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "BlueTriangle")
         {
             //shows a random color on the left 
-            GameObject randBlue = red[rand() % 3 + 1];
-            Instantiate(randBlue, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randBlue = red[Random.Range(1, 3)];
+            Instantiate(randBlue, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randTriangle = triangle[rand() % 3 + 1];
-            Instantiate(randTriangle, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randTriangle = triangle[Random.Range(1, 3)];
+            Instantiate(randTriangle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "BlueCircle")
         {
             //shows a random color on the left 
-            GameObject randBlue = red[rand() % 3 + 1];
-            Instantiate(randBlue, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randBlue = red[Random.Range(1, 3)];
+            Instantiate(randBlue, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randCircle = triangle[rand() % 3 + 1];
-            Instantiate(randCircle, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randCircle = triangle[Random.Range(1, 3)];
+            Instantiate(randCircle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "BlueSquare")
         {
             //shows a random color on the left 
-            GameObject randBlue = red[rand() % 3 + 1];
-            Instantiate(randBlue, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randBlue = red[Random.Range(1, 3)];
+            Instantiate(randBlue, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randSquare = triangle[rand() % 3 + 1];
-            Instantiate(randSquare, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randSquare = triangle[Random.Range(1, 3)];
+            Instantiate(randSquare, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "YellowTriangle")
         {
             //shows a random color on the left 
-            GameObject randYellow = red[rand() % 3 + 1];
-            Instantiate(randYellow, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randYellow = red[Random.Range(1, 3)];
+            Instantiate(randYellow, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randTriangle = triangle[rand() % 3 + 1];
-            Instantiate(randTriangle, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randTriangle = triangle[Random.Range(1, 3)];
+            Instantiate(randTriangle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "YellowCircle")
         {
             //shows a random color on the left 
-            GameObject randYellow = red[rand() % 3 + 1];
-            Instantiate(randYellow, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randYellow = red[Random.Range(1, 3)];
+            Instantiate(randYellow, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randCirclee = triangle[rand() % 3 + 1];
-            Instantiate(randCircle, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randCircle = triangle[Random.Range(1, 3)];
+            Instantiate(randCircle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
         if (randCombo == "YellowSquare")
         {
             //shows a random color on the left 
-            GameObject randYellow = red[rand() % 3 + 1];
-            Instantiate(randYellow, new Vector3(2, 0, 7.5), Quaternion.identity);
+            GameObject randYellow = red[Random.Range(1, 3)];
+            Instantiate(randYellow, new Vector3(2, 0, 7.5f), Quaternion.identity);
             //shows a random shape on the right
-            GameObject randSquare = triangle[rand() % 3 + 1];
-            Instantiate(randSquare, new Vector3(1.8, 0, -5.6), Quaternion.identity);
+            GameObject randSquare = triangle[Random.Range(1, 3)];
+            Instantiate(randSquare, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
 
         }
+        DetectCollisions(); 
     }
 
         public class DetectCollisions : MonoBehaviour{
@@ -145,6 +157,8 @@ public class RandomizerGenerator : MonoBehaviour
             if (other.gameObject.tag == randCombo)
             {
                 Debug.Log("Next Level!");
+                RandomCombo(); 
+
             }
             else
             {
