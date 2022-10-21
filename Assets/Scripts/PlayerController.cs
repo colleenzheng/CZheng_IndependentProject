@@ -4,33 +4,68 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 15.0f;
+    public float speed = 10.0f;
+    public ParticleSystem dirtSystem;
+    private Animator animPlayer;
+    public bool gameOver = false;
+  
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        animPlayer = GetComponent<Animator>();
+  
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (gameOver = false)
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            animPlayer.SetTrigger("Idle_HandsOnHips");
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += Vector3.right * speed * Time.deltaTime;
+                //transform.Rotate(0.0f, 90.0f, 0.0f);
+                animPlayer.SetTrigger("Run");
+                dirtSystem.Play();
+
+
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position += Vector3.left * speed * Time.deltaTime;
+                animPlayer.SetTrigger("Run");
+                //transform.Rotate(0.0f, -90.0f, 0.0f);
+                dirtSystem.Play();
+
+
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += Vector3.forward * speed * Time.deltaTime;
+                animPlayer.SetTrigger("Run");
+                dirtSystem.Play();
+
+
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.position += Vector3.back * speed * Time.deltaTime;
+                animPlayer.SetTrigger("Run");
+                //transform.Rotate(0.0f, 180.0f, 0.0f);
+                dirtSystem.Play();
+
+
+            }
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += Vector3.back * speed * Time.deltaTime;
+            dirtSystem.Stop();
+            animPlayer.SetTrigger("Idle"); 
         }
     }
+
+    
 }

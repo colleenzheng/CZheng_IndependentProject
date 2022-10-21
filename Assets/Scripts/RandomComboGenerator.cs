@@ -65,18 +65,18 @@ public class RandomComboGenerator : MonoBehaviour
     {
         //shows a random color on the left 
         GameObject randRed = color[Random.Range(0, 3)];
-        Instantiate(randRed, new Vector3(0f, randRed.transform.position.y, 5f), randRed.transform.rotation);
+        Instantiate(randRed, new Vector3(-15.3f, randRed.transform.position.y, 2.1f), randRed.transform.rotation);
   
         //shows a random shape on the right
         GameObject randTriangle = shape[Random.Range(0, 3)];
-        Instantiate(randTriangle, new Vector3(0f, randTriangle.transform.position.y, -5f), randTriangle.transform.rotation);
+        Instantiate(randTriangle, new Vector3(-4.7f, randTriangle.transform.position.y, 1.9f), randTriangle.transform.rotation);
     }
 
     //generates random color and shape 
     void RandomCombo() {
 
         randCombo = colorArr[Random.Range(0, colorArr.Length)] + shapeArr[Random.Range(0, shapeArr.Length)];
-        randCombo = "RedTriangle";
+        //randCombo = "RedTriangle";
         //prints random color and shape for player
         Debug.Log(randCombo);
 
@@ -87,66 +87,42 @@ public class RandomComboGenerator : MonoBehaviour
         }
         if (randCombo == "RedCircle")
         {
-            GameObject randRed = red[Random.Range(0, 3)];
-            Instantiate(randRed, new Vector3(0f, randRed.transform.position.y, 5f), randRed.transform.rotation);
-            GameObject randCircle = circle[Random.Range(0, 3)];
-            Instantiate(randCircle, new Vector3(0f, randCircle.transform.position.y, -5f), randCircle.transform.rotation);
+            InstantiateTurn(red, circle);
 
         }
         if (randCombo == "RedSquare")
         {
-            GameObject randRed = red[Random.Range(0, 3)];
-            Instantiate(randRed, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randSquare = square[Random.Range(0, 3)];
-            Instantiate(randSquare, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(red, square);
 
         }
         if (randCombo == "BlueTriangle")
         {
-            GameObject randBlue = blue[Random.Range(0, 3)];
-            Instantiate(randBlue, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randTriangle = triangle[Random.Range(0, 3)];
-            Instantiate(randTriangle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(blue, triangle);
 
         }
         if (randCombo == "BlueCircle")
         {
-            GameObject randBlue = blue[Random.Range(0, 3)];
-            Instantiate(randBlue, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randCircle = circle[Random.Range(0, 3)];
-            Instantiate(randCircle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(blue, circle);
 
         }
         if (randCombo == "BlueSquare")
         {
-            GameObject randBlue = blue[Random.Range(0, 3)];
-            Instantiate(randBlue, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randSquare = square[Random.Range(0, 3)];
-            Instantiate(randSquare, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(blue, square); 
 
         }
         if (randCombo == "YellowTriangle")
         {
-            GameObject randYellow = yellow[Random.Range(0, 3)];
-            Instantiate(randYellow, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randTriangle = triangle[Random.Range(0, 3)];
-            Instantiate(randTriangle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(yellow, triangle); 
 
         }
         if (randCombo == "YellowCircle")
         {
-            GameObject randYellow = yellow[Random.Range(0, 3)];
-            Instantiate(randYellow, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randCircle = circle[Random.Range(0, 3)];
-            Instantiate(randCircle, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(yellow, circle); 
 
         }
         if (randCombo == "YellowSquare")
         {
-            GameObject randYellow = yellow[Random.Range(0, 3)];
-            Instantiate(randYellow, new Vector3(2, 0, 7.5f), Quaternion.identity);
-            GameObject randSquare = square[Random.Range(0, 3)];
-            Instantiate(randSquare, new Vector3(1.8f, 0, -5.6f), Quaternion.identity);
+            InstantiateTurn(yellow, square); 
 
         }
        

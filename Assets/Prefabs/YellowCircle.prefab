@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 587615628134222276}
   - component: {fileID: 587615628134222277}
   - component: {fileID: 587615628134222278}
+  - component: {fileID: 2650143949038607535}
   m_Layer: 0
   m_Name: YellowCircle
   m_TagString: Untagged
@@ -92,9 +93,23 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587615628134222272}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2650143949038607535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587615628134222272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5123efd6e857547a72f181c8df94dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceType: YellowCircle
+  randomCGObject: {fileID: 0}
