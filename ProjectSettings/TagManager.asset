@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BlueSquare
+  - YellowSquare
+  - RedSquare
+  - BlueCircle
+  - YellowCircle
+  - RedCircle
+  - YellowTriangle
+  - RedTriangle
+  - BlueTriangle
+  - Floor
+  - Power Up
   layers:
   - Default
   - TransparentFX
